@@ -12,6 +12,10 @@ class CollectionViewCell: UICollectionViewCell {
     
     var cellView: UIView = UIView() {
         didSet {
+            /*
+             Not a mistake in this case, but in general you should remove the previous view
+             that was added to this reusable cell.
+             */
             addSubview(cellView)
             cellView.frame = bounds
             layer.masksToBounds = true
